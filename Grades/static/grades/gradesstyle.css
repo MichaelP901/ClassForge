@@ -1,0 +1,286 @@
+#classes
+{
+    width: 400px;
+    height: 650px;
+    border-style: solid;
+    visibility: show;
+}
+
+#assignments
+{
+    /* display: block; */ /* on or off (block | none) */
+    width: 400px;
+    height: 650px;
+    border-style: solid;
+    visibility: show;
+}
+
+.title
+{
+    font-size: 30px;
+    font-family: "League Spartan";
+    text-align: center;
+    width: 100%;
+    height: 50px;
+    justify-self: center;
+}
+
+.container
+{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.container-class
+{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: auto;
+    width: 500px;
+
+}
+
+.container-assignment
+{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: auto;
+    width: 500px;
+}
+
+.container-chart
+{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: auto;
+    width: 500px;
+}
+
+.class-list:hover
+{
+    text-align: center;
+    background: grey;
+    cursor: pointer;
+}
+
+.class-list
+{
+    text-align: center;
+    width: 100%;
+    height: 50px;
+    background: none;
+    border: none;
+}
+
+#classInput
+{
+    width: 400px;
+    height: 50px;
+}
+
+#modalBackDropAdd, #modalBackDropDelete, #modalBackDropAddAssignments, #modalBackDropDeleteAssignments
+{
+    display: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    gap: 0;
+    top: 0px;
+    left: 0px;
+    z-index: 10;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.buttons
+{
+    width: 200px;
+    height: 50px;
+}
+
+.buttons:hover
+{
+    cursor: pointer;
+}
+
+.class-modal
+{
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    align-items: center;
+    height: auto;
+    width: auto;
+    margin-bottom: 40px;
+}
+
+.inner-box
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    background-color: white;
+    box-shadow: 0px 0px 10px 10px;
+    width: 400px;
+    height: 500px;
+}
+
+.close-button
+{
+    color: white;
+    font-size: 40px;
+    margin: 0;
+    padding: 0;
+    margin-left: 500px;
+    height: auto;
+    width: auto;
+    text-align: center;
+}
+
+.close-button:hover
+{
+
+    cursor: pointer;
+    color: red;
+    /* box-shadow: 0px 0px 10px 10px rgb(0, 0, 0); */
+}
+
+#message
+{
+    text-align: center;
+}
+
+#button-container
+{
+    display: flex;
+}
+
+/*
+    Doughnut Chart Styles
+*/
+
+.donut-chart, #part1, #part2, #part3, .center
+{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;  
+}
+
+.donut-chart 
+{
+    visibility: show;
+    position: relative;
+    width: 400px;
+    height: 400px;
+    border-radius: 100%;
+    border: 10px solid red;
+}
+
+p.center 
+{
+    background: white;
+    position: absolute;
+    text-align: center;
+    font-size: 60px;
+    font-weight: bold;
+    font-family: 'Roboto';
+    top:0;left:0;bottom:0;right:0;
+    width: 250px;
+    height: 250px;
+    margin: auto;
+    border-radius: 50%;
+    line-height: 45px;
+    gap: 1em;
+    padding: 15% 0 0;
+}
+    
+    
+.portion-block 
+{
+    border-radius: 50%;
+    clip: rect(0px, 400px, 400px, 200px);
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+
+.circle 
+{
+    border-radius: 100%;
+    clip: rect(0px, 200px, 400px, 0px);
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+
+#grade-update
+{
+    font-size: 40px;
+}
+
+/* Animations for chart*/
+    
+#part1 
+{
+    transform: rotate(0deg);
+}
+
+#part1 .circle 
+{
+    background-color: #E64C65;
+    /* transform: rotate(76deg); */
+    animation: first 1s 1 forwards .25s;
+}   
+    
+#part2 
+{
+    transform: rotate(100deg);
+}
+
+#part2 .circle
+{
+    background-color: #11A8AB;
+    animation: second 1s 1 forwards .25s;
+}
+
+#part3 
+{
+    transform: rotate(250deg);
+}
+
+#part3 .circle 
+{
+    background-color: #4FC4F6;
+    animation: third 1s 1 forwards .25s;
+}
+    
+    
+/* Animation */
+@keyframes first 
+{
+    from {transform: rotate(0deg);}
+    to {transform: rotate(100deg);}
+}
+    
+@keyframes second 
+{
+    from {transform: rotate(0deg);}
+    to {transform: rotate(150deg);}
+}
+    
+@keyframes third 
+{
+    from {transform: rotate(0deg);}
+    to {transform: rotate(111deg);}
+}

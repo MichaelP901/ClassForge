@@ -1,0 +1,252 @@
+/* The sidebar menu */
+.sidebar {
+  height: 100%; /* 100% Full-height */
+  width: 50px; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0;
+  left: 0;
+  background-color: #4458a9; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+  font-family: "roboto";
+}
+
+/* The sidebar links */
+.sidebar a {
+  padding: 8px 0px 15px 20px;
+  text-decoration: none;
+  font-size: 25px;
+  color: white;
+  display: block;
+  transition: 0.5s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+/* The button used to open the sidebar */
+.openbtn {
+  float: left;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #4458a9;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s; /* If you want a transition effect */
+  margin-left: 40px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+
+/* 
+============syles for Home==================
+*/
+
+
+/*
+  For rgid
+*/
+
+/* :root {
+  --clr-dark: #0f172a;
+  --clr-light: #f1f5f9;
+  --clr-accent: #e11d48;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 5em 0 0 0;
+  padding: 0;
+  line-height: 1.6;
+  word-spacing: 1.4px;
+  font-family: 'Roboto', sans-serif;
+  color: var(--clr-dark);
+  background-color: var(--clr-light);
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  border: 10px solid var(--clr-dark);
+}
+
+.item {
+  padding: 0.5em;
+  background-color: #fb7185;
+  font-weight: 700;
+  color: var(--clr-light);
+  border: 10px solid var(--clr-accent);
+} */
+
+/*
+  For rgid
+*/
+
+.container
+{
+  display: grid;
+  grid-template-rows: repeat(8, 100px);
+  grid-template-columns: repeat(12, 100px);
+  background: white;
+  border: 1px solid green;
+  height: 98vh;
+}
+
+#greet
+{
+  font-size: 40px;
+  /* border: 1px solid black; */
+  grid-row: 1;
+  grid-column: 4 / 8;
+  text-align: center;
+
+}
+
+.grade-list
+{
+  list-style: none;
+  line-height: 50px;
+}
+
+#Home-Calender
+{
+  border: 1px solid black;
+  width: 650px;
+  height: 400px;
+  grid-row: 1 / 5;
+  grid-column: 12;
+}
+
+.task-title
+{
+  width: 75%;
+  font-size: 25px;
+  height: 30px;
+  border: 1px solid black;
+}
+
+#task-box
+{
+  height: 400px;
+  width: 800px;
+  text-align: center;
+  border: 1px solid red;
+  grid-row: 6/9;
+  grid-column: 2/6;
+}
+
+.task-row
+{
+  border: 1px solid black;
+  text-align: center;
+  width: 75%;
+}
+
+#assignment
+{
+  font-size: 25px;
+  list-style: none;
+  line-height: 50px;
+}
+
+#class-box
+{
+  align-self: center;
+  height: 400px;
+  width: 400px;
+  grid-row: 7 / 9;
+  grid-column: -1;
+
+  border: 1px solid black;
+}
+
+#class-titles
+{
+  color: black;
+  text-align: center;
+}
+
+/*
+For Calender
+*/
+
+#header {
+  padding: 10px;
+  color: #d36c6c;
+  font-size: 26px;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+}
+
+#header button {
+  background-color:#92a1d1;
+}
+
+#weekdays {
+  width: 100%;
+  display: flex;
+  color: #247BA0;
+}
+
+#weekdays div {
+  display: flex;
+  text-align: center;
+  width: 100px;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+#calender {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  /* border: 1px solid black; */
+}
+
+.day {
+  width: 80px;
+  padding: 25px;
+  height: 10px;
+  cursor: pointer;
+  box-sizing: border-box;
+  background-color: white;
+  margin: 6px;
+  box-shadow: 0px 0px 3px #CBD4C2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* border: 1px solid black; */
+}
+
+/* .day:hover 
+{
+  background-color: none;
+} */
+
+.day + #currentDay {
+  background-color: gold;
+}

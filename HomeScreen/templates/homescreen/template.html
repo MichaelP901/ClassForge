@@ -1,0 +1,41 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% block title %}
+        {% endblock %}
+        <link href="{% static 'homescreen/style.css' %}" rel="stylesheet">
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href='https://fonts.googleapis.com/css?family=League Spartan' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+
+        <script src="{% static 'HomeScreen/js/script.js' %}" defer></script>
+
+    </head>
+    <body>
+        <!-- Side navigation -->
+
+        <div id="mySidebar" class="sidebar">
+            <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
+            <a href="{% url 'HomeScreen:home' %}" id="Overview">Overview</a>
+            <a href="{% url 'Grades:grades' %}">Grades</a>
+            <a href="{% url 'Calender:calender' %}">Calender</a>
+            <a href="{% url 'discounts:links' %}">Sudent<br/>Perks</a>
+            <a href="{% url 'Login:logout_view' %}">Log Out</a>
+        </div>
+        
+        <div id="main">
+            <button class="openbtn" onclick="openAndCloseNav()">&raquo;</button>
+        </div>
+
+
+            {% block body %}
+            {% endblock %}
+
+            
+    </body>
+</html>

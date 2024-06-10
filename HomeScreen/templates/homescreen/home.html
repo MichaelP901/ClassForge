@@ -1,0 +1,73 @@
+{% extends "homescreen/template.html" %}
+
+{% load static%}
+
+{% block title %}
+
+<title>Dashboard</title>
+
+{% endblock %}
+
+
+{% block body %}
+
+    <script src="{% static 'HomeScreen/js/homescreen.js' %}"></script>
+
+    <div class="container">    
+
+        <h1 id="greet">Welcome {{ request.user.first_name }}, {{ request.user.last_name }}</h1>
+        
+        <div id="Home-Calender">
+            <div id="header">
+                <div id="monthDisplay"></div>
+            </div>
+            
+            <div id="weekdays">
+                <div>Sunday</div>
+                <div>Monday</div>
+                <div>Tuesday</div>
+                <div>Wednesday</div>
+                <div>Thursday</div>
+                <div>Friday</div>
+                <div>Saturday</div>
+            </div>
+            
+            <div id="calender"></div>
+        </div>
+
+        
+        <table id="task-box">
+            <tr > 
+                <td class="task-title">Assignment</td>
+                <td class="task-title">Date</td>
+            </tr>
+            <tr > 
+                <td class="task-row">
+                    {% for assignment in assignments %}
+                        <li id="assignment">{{ assignment.name }}</li>
+                    {% endfor %}
+                </td>
+                <td class="task-row">
+                    
+                    {% for assignment in assignments %}
+                        <li id="assignment">{{ assignment.due_date }}</li>
+                    {% endfor %}
+
+                </td>
+            </tr>
+        </table>
+        
+        
+    
+        <div id="class-box">
+            <h2 id="class-titles">Grades</h2>
+        
+            <ul class="grade-list">
+                {% for class in Classes %}
+                    <li>{{ class }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    
+{% endblock %}

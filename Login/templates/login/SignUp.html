@@ -1,0 +1,42 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Welcome</title>
+        <link href="{% static 'login/SignUp.css' %}" rel="stylesheet">
+        
+        <link href='https://fonts.googleapis.com/css?family=League Spartan' rel='stylesheet'>
+    </head>
+    <body>
+
+        <div id="container">
+
+            <h2 id="signup">Sign Up</h2>
+            <hr width="400px"><br/>
+
+            {% for message in messages %}
+
+            <h5 id="error-msg">{{message}}</h5>
+
+            {% endfor %}
+
+            <div id="info">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <input type="text" placeholder="First" class="name" name="firstname">
+                    <input type="text" placeholder="Last" class="name" name="lastname"><br>
+                    <input type="text" placeholder="E-Mail" id="email" name="email"><br>
+                    <input type="password" placeholder="Type Password" id="password" name="password"><br>
+                    <input type="password" placeholder="Re-Type Password" id="password" name="re-password"><br>
+                    <input type="submit"/>
+                </form>
+            </div>
+
+            <p>Already have an account? <a href="{% url 'Login:login_view' %}">Login</a></p>
+
+        </div>
+        
+
+    </body>
+</html>

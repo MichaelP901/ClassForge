@@ -1,0 +1,54 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <title>Welcome</title>
+      <link href="{% static 'login/styles.css' %}" rel="stylesheet">
+      
+      <link href='https://fonts.googleapis.com/css?family=League Spartan' rel='stylesheet'>
+      <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+
+      <meta charset="UTF-8"> 
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+    </head>
+    <body>
+      
+      <div class="container">
+        
+        <h1 class="title-left" >Take<br/> 
+          Control of<br/> 
+          Your<br/> 
+          Learning!</h1>
+  
+          
+        <div id="piechart"></div> 
+        
+        <div class="Login">
+          <h2 id="Login-Heading">Login</h2><br/>
+          <hr width="250px" font-weight="100"><br/>        
+          
+          <h3 id="Login-info">Enter your Email and Password</h3>
+  
+          {% for message in messages %}
+            <div id="message">{{ message }}</div>
+          {% endfor %}
+  
+          <form action="" method="post">
+            {% csrf_token %}
+            <input type="username" id="email" name="username" placeholder="Email">
+            <br/>
+            <input type="password" id="password" name="password" placeholder="Password">
+            <br/>
+            <button id="Login-Button">Login</button>
+          </form>
+  
+          <p id="signup">Don't have an account? <a href="{% url 'Login:signup' %}">Sign Up</a></p>
+  
+        </div>
+      </div>
+      
+
+    </body>
+</html>
+    
